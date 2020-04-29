@@ -16,6 +16,7 @@ export default class PingService {
                 const comparation = this.compareOldAndNewObject(arpData);
                 console.log("comparation", comparation);
                 this.saveObjectInFile(JSON.stringify(arpData));
+                this.contactGW(arpData); // lo fa sempre
                 if (!comparation) {
                     this.contactGW(arpData);
                 }
