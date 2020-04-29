@@ -11,12 +11,6 @@ module.exports = {
   },
   arp: {
     interface: "en0",
-    entry_interface: "ifname",
-    check_file: "arp_object"
-  },
-  default_tenant: "edge0",
-  jwt: {
-    expiresIn: "1h",
-    jwtSecret: "vtDnSsRVrai"
+    entry_interface: "ifname"
   }
 };
