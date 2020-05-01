@@ -8,8 +8,6 @@ import _ = require('lodash');
 import TenantStore from '../stores/tenantStore';
 const tenantStore = new TenantStore();
 import { ITenant, ILease, IDevice } from '../interfaces/interfaces';
-import DNSService from './dnsService';
-const dnsService = new DNSService();
 import DeviceStore from '../stores/deviceStore';
 const deviceStore = new DeviceStore();
 const PromiseBB = require('bluebird');
