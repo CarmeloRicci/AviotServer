@@ -12,12 +12,15 @@ export default class PingService {
         try {
             const arpData = await this.getElementsFromArpTable();
             console.log("arpData", arpData);
+            console.log("PING: Controllo ARP table -->", arpData)
             if (arpData) {
                 const comparation = this.compareOldAndNewObject(arpData);
                 console.log("comparation", comparation);
                 this.saveObjectInFile(JSON.stringify(arpData));
+                console.log("PING: Verifico il se l'oggetto è cambiato -->",comparation);
                 //this.contactGW(arpData); // lo fa sempre
                 if (!comparation) {
+                    console.log("PING: Contatto il Gateway")
                     this.contactGW(arpData);
                 }
             }
