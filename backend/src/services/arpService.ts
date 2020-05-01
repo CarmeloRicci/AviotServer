@@ -20,7 +20,7 @@ export default class PingService {
                 console.log("PING: Verifico il se l'oggetto è cambiato -->",comparation);
                 //this.contactGW(arpData); // lo fa sempre
                 if (!comparation) {
-                    console.log("PING: Contatto il Gateway")
+                    console.log("PING: Contatto il Gat")
                     this.contactGW(arpData);
                 }
             }
@@ -58,7 +58,7 @@ export default class PingService {
 
             // equal = Object.is(newObjectStringified, oldObjectStringified)
             const oldObject = JSON.parse(oldObjectStringified);
-            areEqual = equal(newObject, oldObject);
+            areEqual = await equal(newObject, oldObject);
         }
         return areEqual;
     }
