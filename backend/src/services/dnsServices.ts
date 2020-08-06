@@ -7,7 +7,7 @@ import _ = require('lodash');
 
 
 export default class DnsService {
-    async SendPostResponse() {
+    async SendPostResponse(ip: string) {
         let request_data = {
             url: `http://${ip}:3800/dns_response`,
             method: 'POST',
@@ -19,6 +19,6 @@ export default class DnsService {
             json: true
         };
         await Utilities.request(request_data);
-        console.log("DnsService - SendPostResponse: Post send! " + `(http://${cfg.general.ipDnsServer}:3800/dns_response)`)
+        console.log("DnsService - SendPostResponse: Post send! " + `(http://${ip}:3800/dns_response)`)
     }
 }
