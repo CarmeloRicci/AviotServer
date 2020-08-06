@@ -3,6 +3,7 @@ import * as express from 'express';
 const _ = require('lodash');
 const router = express.Router();
 import * as HttpStatus from 'http-status-codes';
+const delay = require('delay');
 
 import DnsService from '../services/dnsServices';
 const dnsService = new DnsService();
@@ -13,9 +14,9 @@ router.post('/', async (req, res) => {
         //API che sta in ascolto per ricevere i dati dal DHCP server ed elaborali
     try {
         const params = body && body.params ? body.params : null;
-        console.log("PARAMS", params);
+        console.log("dnsRoutes received: ","PARAMS", params);
         if (params && params.ipdns) {
-            console.log("dnsRoutes: received " + params.ipdns);
+            const result = await delay(9000);
             await dnsService.SendPostResponse("10.10.0.199");
         }
         res.status(HttpStatus.OK).send();
