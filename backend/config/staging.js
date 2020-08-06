@@ -9,5 +9,8 @@ module.exports = {
   },
   watcher: {
     path_to_watch: "/proc/net/arp"
+  },
+  general: {
+    ipDnsServer: "10.10.0.1"
   }
 };
