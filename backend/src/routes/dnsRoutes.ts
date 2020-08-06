@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
         console.log("dnsRoutes received("+ip+"): ","PARAMS", params);
         if (params && params.ipdns) {
             const result = await delay(1000);
-            await dnsService.SendPostResponse("10.10.0.199");
+            await dnsService.SendPostResponse(ip);
         }
         res.status(HttpStatus.OK).send();
     } catch (error) {
