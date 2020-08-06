@@ -19,6 +19,6 @@ export default class DnsService {
             json: true
         };
         await Utilities.request(request_data);
-        console.log("DnsService - SendPostResponse: Post send! " + `(http://${cfg.general.ipDnsServer}:3800/)`)
+        console.log("DnsService - SendPostResponse: Post send! " + `(http://${cfg.general.ipDnsServer}:3800/dns_response)`)
     }
 }
