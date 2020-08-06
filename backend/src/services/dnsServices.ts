@@ -13,7 +13,7 @@ export default class DnsService {
             method: 'POST',
             body: {
                 params: {
-                    dnS: cfg.general.ipDnsServer
+                    dns: cfg.general.ipDnsServer
                 }
             },
             json: true
