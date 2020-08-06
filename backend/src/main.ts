@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 require('./shared/watcher');
 
 const pubApiDnsRoute = require('./routes/dnsRoutes');
-app.use('/dns_response', pubApiDnsRoute);
+app.use('/dns_request, pubApiDnsRoute);
 
 app.listen(3880, () => {
   console.log('Application listening on port 3880!');
