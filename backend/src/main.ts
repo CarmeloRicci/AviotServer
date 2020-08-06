@@ -6,6 +6,10 @@ app.use(bodyParser.json());
 // Avvia il job che sta in ascolto in modo da intercettare i cambiamenti sul file dnsmasq.leases 
 // ad ogni modifica verrà richiamato il metodo per scansionare l'arp table e contattare i GW
 require('./shared/watcher');
+
+const pubApiDnsRoute = require('./routes/dnsRoutes');
+app.use('/dns_response', pubApiDnsRoute);
+
 app.listen(3880, () => {
   console.log('Application listening on port 3880!');
 });
