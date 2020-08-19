@@ -5,14 +5,14 @@ const app = express();
 app.use(bodyParser.json());
 
 
-// -----  API per comunicare ai gateway il dns  ----- \\
+// -----  API che gestisce le richieste di tipo dns  ----- \\
 const pubApiDnsRoute = require('./routes/dnsRoutes');
-app.use('/dns_request', pubApiDnsRoute);
+app.use('/dns', pubApiDnsRoute);
 
 
 // -----  Avvia il job che sta in ascolto in modo da intercettare i cambiamenti dell'arp table e del file dnsmasq.leases  ----- \\ 
-// -----  ad ogni modifica verrà richiamato il metodo per scansionare l'arp table e contattare i GW                       ----- \\
 require('./shared/watcher');
+
 
 //import { WatcherService } from './shared/watcher';
 
