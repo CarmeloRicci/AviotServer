@@ -24,7 +24,7 @@
     "lodash": "^4.17.15",
     "mysql": "^2.18.1",
     "ping": "^0.2.2",
-    "request": "^2.88.0"
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.1",
