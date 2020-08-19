@@ -10,9 +10,7 @@ const dnsService = new DnsService();
 
 router.post('/', async (req, res) => {
     const body = req.body;
-    //var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     var ip = req.connection.remoteAddress.split(":")[((req.connection.remoteAddress.split(":")).length)-1]
-        //API che sta in ascolto per ricevere i dati dal DHCP server ed elaborali
     try {
         const params = body && body.params ? body.params : null;
         console.log("dnsRoutes received("+ip+"): ","PARAMS", params);
