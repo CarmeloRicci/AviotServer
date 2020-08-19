@@ -8,17 +8,16 @@ import LeasesService from '../services/leasesServices';
 const leasesService = new LeasesService();
 
 
-export class Watcher {
-    static watcher_file_arp(wait: number) {
+
+    //watcher_file_arp(wait: number) {
         fs.watchFile(cfg.watcher_apr.path_to_watch, (curr: any, prev: any) => {
             console.log(`[${new Date().toLocaleString()}] Watching for file changes on: ${cfg.watcher_apr.path_to_watch}`);
             arpService.execute();
         })
-    }
-    static watcher_file_leases(wait: number) {
+    //}
+    //watcher_file_leases(wait: number) {
         fs.watchFile(cfg.watcher_leases.path_to_watch, (curr: any, prev: any) => {
             console.log(`[${new Date().toLocaleString()}] Watching for file changes on: ${cfg.watcher_leases.path_to_watch}`);
             leasesService.leasesServices("todo");
         })
-    }
-}
+    //}

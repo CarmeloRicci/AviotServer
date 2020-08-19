@@ -12,13 +12,16 @@ app.use('/dns_request', pubApiDnsRoute);
 
 // -----  Avvia il job che sta in ascolto in modo da intercettare i cambiamenti dell'arp table e del file dnsmasq.leases  ----- \\ 
 // -----  ad ogni modifica verrà richiamato il metodo per scansionare l'arp table e contattare i GW                       ----- \\
-//require('./shared/watcher');
-const WatcherService = require('./shared/watcher');
-//mport WatcherService from './shared/watcher';
+require('./shared/watcher');
 
-const watcherService = new WatcherService();
-watcherService.watcher_file_arp();
-watcherService.watcher_file_leases();
+//import { WatcherService } from './shared/watcher';
+
+//const WatcherService = require('./shared/watcher');
+// import WatcherService from './shared/watcher';
+
+// const watcherService = new WatcherService();
+// watcherService.watcher_file_arp();
+// watcherService.watcher_file_leases();
 
 
 app.listen(3880, () => {
