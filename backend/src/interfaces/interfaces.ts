@@ -3,3 +3,11 @@ export interface IResultRequest {
     error?: any;
     success: boolean;
 }
+
+export interface FormatLeases {
+    timestamp: string;
+    mac: string;
+    ip: string;
+    host: string;
+    id: string;
+}
