@@ -21,11 +21,7 @@ export default class LeasesServices {
             let splitted2 = splitted1[i].split(" ");
             if (splitted2.length === 5) {
                 //for (let i in splitted2) {
-                    temp.timestamp = splitted2[0]
-                    temp.mac = splitted2[1]
-                    temp.ip = splitted2[2]
-                    temp.host = splitted2[3]
-                    temp.id = splitted2[4]
+                    temp = { timestamp: splitted2[0], mac: splitted2[1], ip: splitted2[2], host: splitted2[3], id: splitted2[4] };
                 //}
                 leases_file.push(temp)
             }
