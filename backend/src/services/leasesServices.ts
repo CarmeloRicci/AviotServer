@@ -13,8 +13,10 @@ export default class LeasesServices {
         let leases_file: FormatLeases[] = new Array();
         let temp: FormatLeases;
         let data = fs.readFileSync('/var/lib/misc/dnsmasq.leases', 'utf8');
-        console.log('Leases', data);
+        //console.log('Leases', data);
         let splitted1 = data.split("\n");
+        console.log ("1-->" + splitted1[0])
+        console.log ("0-->" + splitted1[1])
         for (let i in splitted1) {
             //console.log(splitted1)
             //console.log(i)
