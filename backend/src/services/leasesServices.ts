@@ -27,8 +27,6 @@ export default class LeasesServices {
                 //}
                 leases_file.push(temp)
             }
-
-            console.log(leases_file)
             // let splitted2 = splitted1[1].split(" ");
             // if (splitted2.length === 5) {
             //     for (let i in splitted2) {
@@ -41,7 +39,7 @@ export default class LeasesServices {
             // }
             // leases_file.push(temp)
         }
-        // console.log(leases_file)
+        console.log(leases_file)
     }
 
 }
