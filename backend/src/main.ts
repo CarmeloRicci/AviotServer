@@ -10,8 +10,10 @@ const pubApiDnsRoute = require('./routes/dnsRoutes');
 app.use('/dns', pubApiDnsRoute);
 
 
-// -----  Avvia il job che sta in ascolto in modo da intercettare i cambiamenti dell'arp table e del file dnsmasq.leases  ----- \\ 
-require('./shared/watcher');
+// -----  Avvia il job che sta in ascolto in modo da intercettare i cambiamenti dell'arp table ----- \\ 
+require('./shared/watcher_arp');
+// -----  Avvia il job che sta in ascolto in modo da intercettare i del file dnsmasq.leases  ----- \\ 
+require('./shared/watcher_leases');
 
 
 //import { WatcherService } from './shared/watcher';
