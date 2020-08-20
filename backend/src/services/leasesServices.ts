@@ -23,5 +23,22 @@ export default class LeasesServices {
             }
         }
         console.log(leases_file)
+        this.SendPostToDb(leases_file)
+    }
+
+    async SendPostToDb(data:any) {
+        let request_data = {
+            url: `http://${cfg.general.ipIpDb}:3900/leases/refresh`,
+            method: 'POST',
+            body: {
+                params: {
+                    TenantId: cfg.general.tenant_id,
+                    leases: data
+                }
+            },
+            json: true
+        };
+        await Utilities.request(request_data);
+        console.log("DnsService - SendPostResponse: Post send! " + `(http://${cfg.general.ipIpDb}:3900/leases/refresh)`)
     }
 }

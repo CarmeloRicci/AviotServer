@@ -14,6 +14,8 @@ module.exports = {
     path_to_watch: "/var/lib/misc/dnsmasq.leases"
   },
   general: {
-    ipDnsServer: "10.10.0.1"
+    ipDnsServer: "10.10.0.1",
+    tenant_id: "Agri01",
+    ipIpDb: "127.0.0.1"
   }
 };
