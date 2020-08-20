@@ -16,20 +16,21 @@ export default class LeasesServices {
         console.log('Leases',data);
         let splitted1 = data.split("\n");
         for (let i in splitted1) {
-            //console.log(i,splitted1)
-            let splitted2 = splitted1.split(" ");
-            if (splitted2.length === 5) {
-                for (let i in splitted2) {
-                temp.timestamp = splitted2[0]
-                temp.mac = splitted2[1]
-                temp.ip = splitted2[2]
-                temp.host = splitted2[3]
-                temp.id = splitted2[4]
-                }
-            }
-            leases_file.push(temp)
+            console.log(splitted1)
+            console.log(i)
+            // let splitted2 = splitted1[1].split(" ");
+            // if (splitted2.length === 5) {
+            //     for (let i in splitted2) {
+            //     temp.timestamp = splitted2[0]
+            //     temp.mac = splitted2[1]
+            //     temp.ip = splitted2[2]
+            //     temp.host = splitted2[3]
+            //     temp.id = splitted2[4]
+            //     }
+            // }
+            // leases_file.push(temp)
         }
-        console.log(leases_file)
+        // console.log(leases_file)
     }
 
 }
