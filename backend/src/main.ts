@@ -9,6 +9,10 @@ app.use(bodyParser.json());
 const pubApiDnsRoute = require('./routes/dnsRoutes');
 app.use('/dns', pubApiDnsRoute);
 
+// -----  API che gestisce le richieste di tipo host  ----- \\
+const pubApiHostRoute = require('./routes/hostRoutes');
+app.use('/host', pubApiHostRoute);
+
 
 // -----  Avvia il job che sta in ascolto in modo da intercettare i cambiamenti dell'arp table ----- \\ 
 require('./shared/watcher_arp');
