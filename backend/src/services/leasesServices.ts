@@ -4,14 +4,14 @@ const equal = require('deep-equal');
 const fs = require('fs');
 import { Utilities } from '../shared/utilities';
 import _ = require('lodash');
-import { FormatLeases } from "../interfaces/interfaces";
+import { ILeases } from "../interfaces/interfaces";
 
 
 
 export default class LeasesServices {
     async leasesServices(ip: string) {
-        let leases_file: FormatLeases[] = new Array();
-        let temp: FormatLeases;
+        let leases_file: ILeases[] = new Array();
+        let temp: ILeases;
         let data = fs.readFileSync('/var/lib/misc/dnsmasq.leases', 'utf8');
         //console.log('Leases', data);
         let splitted1 = data.split("\n");
